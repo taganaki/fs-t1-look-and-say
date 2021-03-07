@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/look_and_say'
+
+look_and_say = LookAndSay.new
+
+puts 'Welcome to the Look-and-Say program'
+
+loop do
+  puts 'Enter the length of the sequence:'
+  sequence_length = gets.to_i
+
+  puts 'Your result:'
+  puts look_and_say.create_sequence(sequence_length)
+
+  puts 'Do you want to continue? (Y/N)'
+  choice = gets.chomp.downcase
+  break unless choice == 'y'
+end
